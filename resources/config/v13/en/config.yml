@@ -138,7 +138,7 @@ customItems:
 # You only need to add something here if you want to specify a custom name or color for the base potion
 
  # name: Name of the base potion coming out of the Cauldron (Formatting codes possible: such as &6)
- # description: List of text that shows when the brew hasn't been crafted yet in the collection menu (Formatting codes possible: such as &6)
+ # undiscoveredLore: List of text that shows when the brew hasn't been crafted yet in the collection menu (Formatting codes possible: such as &6)
  # hidden: Whether to hide the brew from the collection menu, defaults to false
  # ingredients: List of 'material/amount'
  #   With an item in your hand, use /brew ItemName to get its material for use in a recipe
@@ -159,7 +159,7 @@ cauldron:
   # Example with all possible entries
   ex:
     name: Example
-    description:
+    undiscoveredLore:
       - An example for a Base Potion
     hidden: false
     ingredients:
@@ -407,7 +407,7 @@ cauldron:
 # -- Recipes for Potions --
 
 # name: Different names for bad/normal/good (Formatting codes possible: such as &6)
-# description: List of text that shows when the brew hasn't been crafted yet in the collection menu (Formatting codes possible: such as &6)
+# undiscoveredLore: List of text that shows when the brew hasn't been crafted yet in the collection menu (Formatting codes possible: such as &6)
 # hidden: Whether to hide the brew from the collection menu, defaults to false
 # ingredients: List of 'material/amount'
 #   With an item in your hand, use /brew ItemName to get its material for use in a recipe
@@ -445,7 +445,7 @@ recipes:
   #  Example Recipe with every possible entry first:
   ex:
     name: Bad Example/Example/Good Example
-    description:
+    undiscoveredLore:
       - An example brew
     hidden: false
     ingredients:

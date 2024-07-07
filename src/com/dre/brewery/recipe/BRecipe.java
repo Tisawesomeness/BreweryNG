@@ -36,7 +36,7 @@ public class BRecipe {
 	private String[] name;
 	private boolean saveInData; // If this recipe should be saved in data and loaded again when the server restarts. Applicable to non-config recipes
 	private String optionalID; // ID that might be given by the config
-	private List<String> description; // The text that shows when a brew hasn't been crafted yet in the collection
+	private List<String> undiscoveredLore; // The text that shows when a brew hasn't been crafted yet in the collection
 	private boolean hidden; // Whether to hide this brew from the collection
 
 	// brewing
@@ -111,7 +111,7 @@ public class BRecipe {
 			return null;
 		}
 
-		recipe.description = BUtil.loadCfgStringList(configSectionRecipes, recipeId + ".description");;
+		recipe.undiscoveredLore = BUtil.loadCfgStringList(configSectionRecipes, recipeId + ".undiscoveredLore");;
 		recipe.hidden = configSectionRecipes.getBoolean(recipeId + ".hidden", false);
 
 		recipe.ingredients = loadIngredients(configSectionRecipes, recipeId);
@@ -668,8 +668,8 @@ public class BRecipe {
 		return Optional.ofNullable(optionalID);
 	}
 
-	public List<String> getDescription() {
-		return description;
+	public List<String> getUndiscoveredLore() {
+		return undiscoveredLore;
 	}
 
 	public boolean isHidden() {
@@ -798,8 +798,8 @@ public class BRecipe {
 
 	// Setters
 
-	public void setDescription(List<String> description) {
-		this.description = description;
+	public void setUndiscoveredLore(List<String> description) {
+		this.undiscoveredLore = description;
 	}
 
 	public void setHidden(boolean hidden) {
@@ -953,11 +953,11 @@ public class BRecipe {
 		}
 
 
-		public Builder addDescriptionLine(String line) {
-			if (recipe.description == null) {
-				recipe.description = new ArrayList<>();
+		public Builder addUndiscoveredLore(String line) {
+			if (recipe.undiscoveredLore == null) {
+				recipe.undiscoveredLore = new ArrayList<>();
 			}
-			recipe.description.add(line);
+			recipe.undiscoveredLore.add(line);
 			return this;
 		}
 
