@@ -224,7 +224,7 @@ public class CommandListener implements CommandExecutor {
 				ItemMeta itemMeta = item.getItemMeta();
 				itemMeta.setDisplayName(meta.getDisplayName());
 				item.setItemMeta(itemMeta);
-				List<String> lore = recipe.getDescription() == null ? null : recipe.getDescription().stream()
+				List<String> lore = recipe.getUndiscoveredLore() == null ? null : recipe.getUndiscoveredLore().stream()
 					.map(line -> "§r§f" + line)
 					.toList();
 				item.setLore(lore);
